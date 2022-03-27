@@ -17,9 +17,11 @@ import wx.xrc
 class MainFrame ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 845,481 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 916,481 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer15 = wx.BoxSizer( wx.VERTICAL )
 
 		bSizer14 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -90,6 +92,9 @@ class MainFrame ( wx.Frame ):
 
 		bSizer111 = wx.BoxSizer( wx.VERTICAL )
 
+		self.radiusButton = wx.Button( self, wx.ID_ANY, u"Fix Radius", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer111.Add( self.radiusButton, 0, wx.ALIGN_RIGHT|wx.ALL, 8 )
+
 		self.aclButton = wx.Button( self, wx.ID_ANY, u"ACL Verification", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer111.Add( self.aclButton, 0, wx.ALIGN_RIGHT|wx.ALL, 5 )
 
@@ -134,8 +139,24 @@ class MainFrame ( wx.Frame ):
 
 		bSizer14.Add( bSizer22, 1, wx.ALL, 5 )
 
+		bSizer141 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.SetSizer( bSizer14 )
+
+		bSizer14.Add( bSizer141, 0, wx.EXPAND, 5 )
+
+
+		bSizer15.Add( bSizer14, 1, wx.EXPAND, 5 )
+
+		bSizer17 = wx.BoxSizer( wx.HORIZONTAL )
+
+		self.txtOutput = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_MULTILINE )
+		bSizer17.Add( self.txtOutput, 1, wx.EXPAND, 5 )
+
+
+		bSizer15.Add( bSizer17, 1, wx.EXPAND, 5 )
+
+
+		self.SetSizer( bSizer15 )
 		self.Layout()
 
 		self.Centre( wx.BOTH )
@@ -143,6 +164,7 @@ class MainFrame ( wx.Frame ):
 		# Connect Events
 		self.closeButton.Bind( wx.EVT_BUTTON, self.closeFunc )
 		self.inetButton.Bind( wx.EVT_BUTTON, self.inetFunc )
+		self.radiusButton.Bind( wx.EVT_BUTTON, self.radiusfixitFunc )
 		self.aclButton.Bind( wx.EVT_BUTTON, self.aclFunc )
 		self.backupButton.Bind( wx.EVT_BUTTON, self.backupFunc )
 		self.clearButton.Bind( wx.EVT_BUTTON, self.clearFunc )
@@ -156,6 +178,9 @@ class MainFrame ( wx.Frame ):
 		event.Skip()
 
 	def inetFunc( self, event ):
+		event.Skip()
+
+	def radiusfixitFunc( self, event ):
 		event.Skip()
 
 	def aclFunc( self, event ):

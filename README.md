@@ -5,8 +5,7 @@ A suite of tools for NetOps. GUI Built with wxFormBuilder. Network Tools built w
 
 ## Quick Links
 
-- [Platforms used in this suite]()
-- [Assumptions](https://github.com/ospfpacket/netops_tools/blob/main/README.md#platforms-used-in-the-lab)
+- [Platforms used in this suite](https://github.com/ospfpacket/netops_tools/blob/main/README.md#platforms-used-in-the-lab)
 - [Instructions](https://github.com/ospfpacket/netops_tools/blob/main/README.md#instructions)
 
 ## Platforms Used in the Lab
